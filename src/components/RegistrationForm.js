@@ -1,7 +1,7 @@
 // src/components/RegistrationForm.js
 
 import React, { useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 import {
   validateEmail,
   validatePassword,
@@ -44,10 +44,9 @@ function RegistrationForm() {
       return;
     }
 
-    try {
-      const response = await axios.post("http://localhost:5000/api/register", formData);
+      //const response = await axios.post("http://localhost:5000/api/register", formData);
       setSuccess(true);
-      setMessage(response.data.message);
+      //setMessage(response.data.message);
       setErrors({});
       setFormData({ name: "", email: "", password: "", phone: "" });
 
@@ -56,9 +55,6 @@ function RegistrationForm() {
         setSuccess(false);
         setMessage("");
       }, 5000);
-    } catch (error) {
-      setMessage(error.response?.data?.message || "Server error. Please try again later.");
-    }
   };
 
   return (
